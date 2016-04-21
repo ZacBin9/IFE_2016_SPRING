@@ -1,2 +1,2 @@
-# IFE_2016_SPRING
-BAIDU IFE 2016 Spring Tasks
+# IFE_2016_SPRING DEMO PAGES
+All the demos are here
