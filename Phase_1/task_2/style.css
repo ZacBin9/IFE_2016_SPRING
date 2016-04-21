@@ -6,7 +6,7 @@
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-ol, ul, dl {
+ul {
 	list-style-type: none;
 }
 a {
@@ -92,12 +92,13 @@ article {
 	margin: 20px;
 	padding: 20px;
 	background-color: #fff;
+	box-shadow: 0 0 2px 2px #999;
 }
 article h2 {
-	padding: 5px 0px;
+	padding: 5px 0;
 }
 article h3 {
-	padding: 10px 0px;
+	padding: 10px 0;
 	color: #666;
 }
 article .articleInfo {
@@ -105,7 +106,7 @@ article .articleInfo {
 	font-size: 12px;
 }
 article p {
-	padding: 10px 0px;
+	padding: 10px 0;
 	text-indent: 2em;
 }
 article .imgBox {
@@ -134,4 +135,108 @@ article .imgBox:hover img {
 	opacity: 0.8;
 	-webkit-transform: scale(1.03);
 	transform: scale(1.03);
+}
+article figure {
+	width: 150px;
+	margin: 10px 0;
+	margin-left: 40px;
+	padding: 10px;
+	border: 1px solid #D8D8D8;
+	text-align: center;
+}
+article figure img {
+	width: 100%;
+}
+article ol {
+	margin: 10px 0;
+	margin-left: 40px;
+}
+article ol li {
+	margin: 5px 0;
+}
+article table {
+	width: 100%;
+	border-collapse: collapse;
+}
+article thead {
+	color: #fff;
+	background-color: #333;
+}
+article tfoot {
+	background-color: #BDBDBD;
+}
+article tbody tr:hover {
+	background-color: #f5f5f5;
+}
+article table th {
+	padding: 8px;
+	text-align: left;
+}
+article table td {
+	padding: 8px;
+}
+
+
+/* aside */
+aside {
+	margin: 20px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 2px 2px #999;
+}
+aside h2 {
+	padding: 6px 10px;
+	border-left: 3px solid #BDBDBD;
+	font-size: 16px;
+}
+aside form {
+	margin-left: 300px;
+	padding: 20px;
+}
+aside .formText label {
+	display: inline-block;
+	padding-right: 15px;
+	text-align: right;
+	width: 180px;
+}
+aside .formText {
+	margin-bottom: 10px;
+}
+aside .formControl {
+	height: 30px;
+	padding: 6px 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+aside .tips {
+	margin: 20px 0px;
+	margin-left: 185px;
+	color: #888;
+	font-size: 13px;
+}
+aside .formOther {
+	margin-bottom: 10px;
+}
+aside .formOther label {  /* 如何对齐label里的文本和input */
+	position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 20px;
+	vertical-align: middle;  
+}
+aside .formOther span {
+	display: inline-block;
+    padding-right: 15px;
+    text-align: right;
+    width: 180px;
+}
+aside .formOther .radio, aside .formOther .checkbox {
+	position: absolute;
+	margin: 4px 0;
+	margin-left: -20px;
+}
+aside textarea {
+	
+	width: 60%;
+	height: auto;
 }
