@@ -1,0 +1,146 @@
+/* variables*/
+/* font */
+@font-simhei: '黑体';
+@font-simkai: '楷体';
+@font-base: 12px;
+/* color */
+@bg-color: #5D5D5D;
+@newsbg-color: #fff;
+@header-right-color: #d45d5c;
+@footer-right-color: #d45d5c;
+@section1-textcolor: #cc8091;
+@white: #fff;
+@black: #000;
+
+
+@header-height: 61px;
+@content-width: 892px;
+@footer-height: @header-height;
+
+
+@section1-bottom-left: 85px;
+@margin-center: 0 auto;
+@header-margin-top: 45px;
+@section-margin-top: 40px;
+
+@header-border: 2px solid #938e8c;
+@footer-border: @header-border;
+* { 
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "微软雅黑","Helvetica Neue",Arial,sans-serif;
+	font-size: @font-base;
+	background-color: @bg-color;
+}
+ul {
+	list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/* clearfix */
+.clearfix:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	visibility: hidden; 
+	clear: both; 
+}
+.clearfix { 
+	*zoom: 1; 
+}
+
+/* newspaper */
+.newspaper {
+	height: 1386px;
+	width: 980px;
+	margin: @margin-center;
+  background-color: @newsbg-color;
+}
+.header {
+	height: @header-height;
+	width: @content-width;
+	margin: @margin-center;
+	border-bottom: @header-border;
+  font-family: @font-simhei;
+	.header-left {
+		float: left;
+		height: @header-height;
+		width: 110px;
+		background-color: #D55D5C;
+		span {
+			display: block;
+			margin-top: @header-margin-top;
+			margin-left: 4px;
+			color: @white;
+		}
+	}
+	.header-right {
+		float: right;
+		span {
+			display: block;
+			margin-top: @header-margin-top;
+			color: @header-right-color;
+		}
+	}
+}	
+.section1 {
+	height: 301px;
+	width: @content-width;
+	margin: @margin-center;
+	margin-top: @section-margin-top;
+	figure {
+		float: left;
+		width: 641px;
+	}
+	article {
+		position: relative; 
+		float: right;
+		height: 291px;
+		width: 203px;
+		padding-top: 10px;
+		border-top: 2px solid;
+		border-color: @section1-textcolor;
+		.section1-title {
+			color: @black;
+			font-size: 24px;
+			text-decoration: underline;
+			font-variant: small-caps;
+			text-transform: capitalize;
+		}
+		.section1-text {
+			color: #676767;
+			font-family: @font-simkai;
+		}
+		.section1-bigtext {
+			margin-left: -18px;
+			color: #75b86b;
+			font-size: 116px;
+			font-style: oblique;
+		}
+		.section1-bottom1 {
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			color: @section1-textcolor;
+			font-size: 55px;
+		}
+		.section1-bottom2 {
+      position: absolute;
+      left: @section1-bottom-left;
+      bottom: 10px;
+      color: @section1-textcolor;
+      font-size: 21px;
+      text-transform: lowercase;
+		}
+		.section1-bottom3 {
+      position: absolute;
+      left: @section1-bottom-left;
+      bottom: 0;
+      color: @section1-textcolor;
+      text-transform: lowercase;
+		}
+	}
+}

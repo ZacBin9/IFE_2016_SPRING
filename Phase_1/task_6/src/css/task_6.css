@@ -1,0 +1,121 @@
+/* variables*/
+/* font */
+/* color */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  background-color: #5D5D5D;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/* clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+/* newspaper */
+.newspaper {
+  height: 1386px;
+  width: 980px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.header {
+  height: 61px;
+  width: 892px;
+  margin: 0 auto;
+  border-bottom: 2px solid #938e8c;
+  font-family: '黑体';
+}
+.header .header-left {
+  float: left;
+  height: 61px;
+  width: 110px;
+  background-color: #D55D5C;
+}
+.header .header-left span {
+  display: block;
+  margin-top: 45px;
+  margin-left: 4px;
+  color: #fff;
+}
+.header .header-right {
+  float: right;
+}
+.header .header-right span {
+  display: block;
+  margin-top: 45px;
+  color: #d45d5c;
+}
+.section1 {
+  height: 301px;
+  width: 892px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.section1 figure {
+  float: left;
+  width: 641px;
+}
+.section1 article {
+  position: relative;
+  float: right;
+  height: 291px;
+  width: 203px;
+  padding-top: 10px;
+  border-top: 2px solid;
+  border-color: #cc8091;
+}
+.section1 article .section1-title {
+  color: #000;
+  font-size: 24px;
+  text-decoration: underline;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+.section1 article .section1-text {
+  color: #676767;
+  font-family: '楷体';
+}
+.section1 article .section1-bigtext {
+  margin-left: -18px;
+  color: #75b86b;
+  font-size: 116px;
+  font-style: oblique;
+}
+.section1 article .section1-bottom1 {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  color: #cc8091;
+  font-size: 55px;
+}
+.section1 article .section1-bottom2 {
+  position: absolute;
+  left: 85px;
+  bottom: 10px;
+  color: #cc8091;
+  font-size: 21px;
+  text-transform: lowercase;
+}
+.section1 article .section1-bottom3 {
+  position: absolute;
+  left: 85px;
+  bottom: 0;
+  color: #cc8091;
+  text-transform: lowercase;
+}
