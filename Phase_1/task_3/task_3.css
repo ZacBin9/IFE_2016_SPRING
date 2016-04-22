@@ -6,7 +6,7 @@
 	        box-sizing: border-box;
 }
 body {
-	font-family: "Helvetica Neue","Hiragino Sans GB",Arial,"微软雅黑",sans-serif;
+	font-family: "Helvetica Neue","Hiragino Sans GB",Arial,sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
 }
@@ -31,7 +31,7 @@ ul {
 .left {
 	float: left;
 	width: 200px;
-	margin-right: 20px;
+	margin-right: 20px; /*比起对center设置margin更方便 center设置margin需计算左右宽度*/
 	padding: 20px;
 	background-color: #fff;
 }
@@ -56,7 +56,7 @@ ul {
 	display: block;
 	width: 80px;
 }
-.center {
+.center {  
 	overflow: hidden;
 	padding: 20px;
 	background-color: #fff;
