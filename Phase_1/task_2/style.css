@@ -190,27 +190,27 @@ aside h2 {
 	font-size: 16px;
 }
 aside form {
-	margin-left: 300px;
 	padding: 20px;
 }
 aside .formText label {
 	display: inline-block;
 	padding-right: 15px;
 	text-align: right;
-	width: 180px;
+	width: 40%;
 }
 aside .formText {
 	margin-bottom: 10px;
 }
-aside .formControl {
+aside .formControl { /* input是inline-block属性，触发BFC，不会和float box重叠*/
 	height: 30px;
 	padding: 6px 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
-aside .tips {
+aside .tips {    
 	margin: 20px 0px;
-	margin-left: 185px;
+	margin-left: 40%;
+	padding-left: 4px; /* label和input都是inline-block 之间由于空白字符引起的间距 大小由font决定 单单margin-left: 40%无法对齐*/
 	color: #888;
 	font-size: 13px;
 }
@@ -228,7 +228,7 @@ aside .formOther span {
 	display: inline-block;
     padding-right: 15px;
     text-align: right;
-    width: 180px;
+    width: 40%;
 }
 aside .formOther .radio, aside .formOther .checkbox {
 	position: absolute;
@@ -236,7 +236,30 @@ aside .formOther .radio, aside .formOther .checkbox {
 	margin-left: -20px;
 }
 aside textarea {
-	
-	width: 60%;
+	width: 50%;
 	height: auto;
+	vertical-align: top;
+	font: inherit;
+}
+aside .submitButton {
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+	color: #fff;
+	border: 0;
+	background-color: #3366FF;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+
+
+/* footer */
+footer {
+	padding: 40px 0;
+	color: #fff;
+	background-color: #333;
+}
+footer p {
+    text-align: center;
 }
