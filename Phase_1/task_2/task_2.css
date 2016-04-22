@@ -6,12 +6,6 @@
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-ul {
-	list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
 body {
 	font-family: "Helvetica Neue","Hiragino Sans GB",Arial,"微软雅黑",sans-serif;
 	font-size: 14px;
@@ -19,7 +13,12 @@ body {
 	color: #000;
 	background-color: #BDBDBD;
 }
-
+ul {
+	list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
 /* clearfix */
 .clearfix:after {
 	content: "."; 
