@@ -1,0 +1,25 @@
+.center {
+	position: absolute;
+	height: 200px;
+	width: 400px;
+	left: 50%;
+	top: 50%;
+	background-color: #ccc;
+	transform: translate(-50%,-50%);
+}
+.common {
+	position: absolute;
+	height: 50px;
+    width: 50px;
+    background-color: #fc0;
+}
+.left-top {
+	left: 0;
+	top: 0;
+	border-radius: 0 0 100% 0;
+}
+.right-bottom {
+    right: 0;
+    bottom: 0;
+    border-radius: 100% 0 0 0;
+}

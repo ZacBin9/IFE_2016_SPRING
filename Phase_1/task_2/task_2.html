@@ -2,14 +2,14 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <title>IFE_2016_SPRING_TASK-1</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>IFE_2016_SPRING_TASK-2</title>
+  <link href="task_2.css" rel="stylesheet" type="text/css" />
 </head> 
 <body>
   <header>
     <nav class="clearfix">
       <a href="#"><img src="logo.jpg"></a>
-      <ul>
+      <ul> 
         <li><a href="#">导航链接一</a></li>
         <li><a href="#">导航链接二</a></li>
         <li><a href="#">导航链接三</a></li>
@@ -45,45 +45,47 @@
   		<li>列表项目二</li>
   		<li>列表项目三</li>
   	</ul>
-  	<h3>图片</h3>
+  </article>
+  <article>
+  	<h2>图片</h2>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   	<figure>
-  	  <figcaption>Here is Jam Hsiao</figcaption>
+  	  <figcaption>Jam Hsiao</figcaption>
   	  <img src="zzz.jpg" alt="萧敬腾">	  
   	</figure>
   </article>
@@ -98,18 +100,18 @@
   		<li>排名3</li>
   	</ol>
   	<p>下面是一个表格：</p>
-  	<table border="1">
+  	<table>
   		<thead>
   			<tr>
-  				<td>表头</td>
-  				<td>表头</td>
-  				<td>表头</td>
+  				<th>表头</th>
+  				<th>表头</th>
+  				<th>表头</th>
   			</tr>
   		</thead>
   		<tfoot>
   			<tr>
-  				<td>总计</td>
-  				<td colspan="2">1000</td>
+  				<th>总计</th>
+  				<th colspan="2">1000</th>
   			</tr>
   		</tfoot>
   		<tbody>
@@ -118,6 +120,11 @@
   				<td>表内容单元格</td>
   				<td><a href="#">操作</a></td>
   			</tr>
+        <tr>
+          <td>表内容单元格</td>
+          <td>表内容单元格</td>
+          <td><a href="#">操作</a></td>
+        </tr>
   			<tr>
   				<td>表内容单元格</td>
   				<td>表内容单元格</td>
@@ -132,33 +139,49 @@
   	</table>
   </article>
   <aside>
-    <h2>侧栏标题</h2>
-    <h2>侧栏注册窗口标题</h2>
-    <form>
-    	<label>请输入邮箱地址:<input type="email" placeholder="这是一个文本输入框" name="email"></label><br>
-    	<p>邮箱地址请按要求输入</p>
-    	<label>请输入密码:<input type="password" placeholder="这是一个文本输入框" name="password"></label>
-    	<label>请重复输入密码:<input type="password" placeholder="这是一个文本输入框" name="password"></label><br>
-    	<p>密码请为6-16位英文数字</p>
-    	<span>性别：</span>
-      <label><input type="radio" name="sex">男</label>
-      <label><input type="radio" name="sex">女</label>
-      <label>城市：
-	      <select>
+    <h2>这里是一个侧栏，这是侧栏的标题</h2>
+    <form action="" method="">
+    	<div class="formText">
+        <label>请输入邮箱地址</label>
+        <input class="formControl" type="email" placeholder="这是一个文本输入框" name="email">
+        <div class="tips"><p>邮箱地址请按要求输入</p></div>
+      </div>	
+    	<div class="formText">
+        <label>请输入密码</label>
+        <input class="formControl" type="password" placeholder="这是一个文本输入框" name="password">
+      </div>
+    	<div class="formText">
+        <label>请重复输入密码</label>
+        <input class="formControl" type="password" placeholder="这是一个文本输入框" name="password">
+        <div class="tips"><p>密码请为6-16位英文数字</p></div>
+      </div>
+    	<div class="formOther">
+        <span>性别</span>
+        <label><input class="radio" type="radio" name="sex">男</label>
+        <label><input class="radio" type="radio" name="sex">女</label>
+      </div>
+      <div class="formOther">
+        <span>城市</span>
+	      <select class="formControl">
 	        <option value="北京">北京</option>
 	        <option value="上海">上海</option>
 	        <option value="广州">广州</option>
 	        <option value="杭州">杭州</option>
 	      </select>
-      </label>
-      <span>爱好：</span>
-      <label><input type="checkbox" name="hobby">运动</label>
-      <label><input type="checkbox" name="hobby">艺术</label>
-      <label><input type="checkbox" name="hobby">科学</label>
-      <label>个人描述:<textarea name="description">这是一个多行输入框，请输入你的个人描述</textarea></label>
-      <button type="submit">确认提交</button>
+      </div>
+      <div class="formOther">
+        <span>爱好</span>
+        <label><input class="checkbox" type="checkbox" name="hobby">运动</label>
+        <label><input class="checkbox" type="checkbox" name="hobby">艺术</label>
+        <label><input class="checkbox" type="checkbox" name="hobby">科学</label>
+      </div>
+      <div class="formText">
+        <label>个人描述</label>
+        <textarea name="description" rows="3">这是一个多行输入框，请输入你的个人描述</textarea>
+      </div>
+      <input class="submitButton" type="submit" value="确认提交">
     </form>
   </aside>
-  <footer>版权所有&copy;</footer>
+  <footer><p>版权所有&copy;ZacBin9 2016</p></footer>
 </body>
 </html>

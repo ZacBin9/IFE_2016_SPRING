@@ -1,0 +1,69 @@
+* { 
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+body {
+	font-family: "Helvetica Neue","Hiragino Sans GB",Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+}
+ul {
+	list-style-type: none;
+}
+.clearfix:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	visibility: hidden; 
+	clear: both; 
+}
+.clearfix { 
+	*zoom: 1; 
+}
+.container {
+	margin: 20px;
+	padding: 20px;
+	background-color: #eee;
+}
+.left {
+	float: left;
+	width: 200px;
+	margin-right: 20px; /*比起对center设置margin更方便 center设置margin需计算左右宽度*/
+	padding: 20px;
+	background-color: #fff;
+}
+.left img {
+	float: left;
+	width: 60%;
+}
+.left span {
+	float: right;
+}
+.right {
+	float: right;
+	width: 120px;
+	margin-left: 20px;
+	padding: 0 20px;
+	background-color: #fff;
+}
+.right li {
+	margin: 20px 0;
+}
+.right img {
+	display: block;
+	width: 80px;
+}
+.center {  
+	overflow: hidden;
+	padding: 20px;
+	background-color: #fff;
+}
+.center h2 {
+	text-align: center;
+}
+.center p {
+	text-indent: 2em;
+}
