@@ -2,13 +2,15 @@
 /* font */
 @font-simhei: '黑体';
 @font-simkai: '楷体';
+@font-simsun: '宋体';
 @font-base: 12px;
 /* color */
 @bg-color: #5D5D5D;
 @newsbg-color: #fff;
 @header-right-color: #d45d5c;
-@footer-right-color: #d45d5c;
+@footer-right-color: @header-right-color;
 @section1-textcolor: #cc8091;
+@section3-title-color: #11456b;
 @white: #fff;
 @black: #000;
 
@@ -16,15 +18,31 @@
 @header-height: 61px;
 @content-width: 892px;
 @footer-height: @header-height;
-
+@section1-height: 301px;
+@section2-overlay-width: 191px;
+@section3-right-width: 458px;
+@section3-overlay-height: 61px;
 
 @section1-bottom-left: 85px;
 @margin-center: 0 auto;
 @header-margin-top: 45px;
-@section-margin-top: 40px;
+@section-margin-top: 35px;
+@section2-margin-right: 25px;
 
 @header-border: 2px solid #938e8c;
 @footer-border: @header-border;
+
+@section2-overlay-opacity: 0.4;
+
+.css-triangle (@length, @color){
+	display: inline-block;
+	height: 0;
+	width: 0;
+	border-left: @length solid transparent;
+	border-right: @length solid transparent;
+	border-bottom: @length*2 solid @color;
+}
+
 * { 
 	margin: 0;
 	padding: 0;
@@ -87,13 +105,31 @@ a {
 	}
 }	
 .section1 {
-	height: 301px;
+	height: @section1-height;
 	width: @content-width;
 	margin: @margin-center;
 	margin-top: @section-margin-top;
 	figure {
 		float: left;
+		height: @section1-height;
 		width: 641px;
+		img {
+			position: absolute;
+		}
+		.section1-overlay-left {
+			float: left;
+			height: 100%;
+			width: @section2-overlay-width;
+			background-color: #a0c5ac;
+			opacity: @section2-overlay-opacity;
+		}
+		.section1-overlay-right {
+			float: right;
+			height: 100%;
+			width: @section2-overlay-width;
+			background-color: #e5babf;
+			opacity: @section2-overlay-opacity;
+		}
 	}
 	article {
 		position: relative; 
@@ -139,8 +175,240 @@ a {
       position: absolute;
       left: @section1-bottom-left;
       bottom: 0;
-      color: @section1-textcolor;
+      color: #CCCCCC;
       text-transform: lowercase;
 		}
 	}
+}
+.section2 {
+	width: @content-width;
+	margin: @margin-center;
+	margin-top: @section-margin-top;
+	h2 {
+		font-size: 16px;
+		text-decoration: underline;
+		margin-bottom: 6px;
+	}
+	p {
+		color: #231815;
+		line-height: 16px;
+		opacity: 0.7;
+	}
+	.section2-article-left {
+		float: left;
+		width: 230px;
+		margin-right: @section2-margin-right;\
+		h2 {
+			color: #418c59;
+		}
+	}
+	.section2-article-middle {
+		float: left;
+		width: 210px;
+		margin-right: @section2-margin-right;
+		h2 {
+			color: #d2994f;
+		}
+	}
+	.section2-article-right {
+		position: relative;
+		float: left;
+		width: 140px;
+		h2 {
+			color: #cc7680;
+		}
+		p {
+			line-height: 21px;
+		}
+		.section2-right-wrapper {
+			position: absolute;
+			top: 110px;
+			span {
+				color: #cd4a48;
+				font-style: oblique;
+			}
+		}
+	}
+}
+.section3 {
+	width: @content-width;
+	margin: @margin-center;
+	margin-top: 50px;
+	.section3-left {
+		float: left;
+		width: 415px;
+		.section3-title {
+			color: @section3-title-color;
+			font-weight: bold;
+			font-family: @font-simhei;
+			border-bottom: 2px solid @section3-title-color;
+			p{
+				font-size: 42px;
+			}
+			span {
+				margin-right: 20px;
+				color: #f5e327;
+				font-size: 72px;
+				font-style: oblique;
+			}
+			h2 {
+				margin-bottom: 12px;
+				font-size: 33px;
+			}
+		}
+		.section3-left-text {
+			margin-top: 20px;
+			padding-right: 3px;
+			span {
+				float: left;
+				margin-right: 6px;
+				color: #f5e327;
+				font-size: 70px;
+				line-height: 70px;
+				vertical-align: top;
+			}
+			img {
+				float: right;
+				margin-top: 20px;
+				margin-left: 16px;
+			}
+			p {
+				color: #767777;
+				line-height: 16px;
+        font-family: @font-simsun;
+			}
+			.indent {
+				text-indent: 2em;
+			}
+		}
+	}
+	.section3-right {
+		float: right;
+		width: @section3-right-width;
+		padding-top: 18px;
+		figure {
+			position: relative;
+			.section3-right-overlay {
+				position: absolute;
+				bottom: 0;
+				height: @section3-overlay-height;
+				width: @section3-right-width;
+				background-color: @black;
+				opacity: 0.4;
+			}
+			img {
+				display: block;
+			}
+			p {
+				position: absolute;
+				left: 10%;
+				bottom: 10px;
+				height: 44px;
+				padding-left: 10px;
+				border-left: 3px solid #72b16a;
+				color: @white;
+				font-size: 26px;
+				line-height: 44px;
+				span {
+					margin-left: 10px;
+					font-size: 12px;
+					color: #72b16a;
+					font-style: oblique;
+				}
+			}
+		}
+
+	}
+}
+.section3-right-bottom {
+	position: relative;
+	height: 318px;
+	width: @section3-right-width;
+	margin-top: 40px;
+	background-color: #eeedd6;
+	.section3-right-redarea {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 160px;
+		width: 260px;
+		color: @white;
+		background-color: #d45d5c;
+		.zero {
+			float: left;
+			padding-right: 3px;
+			margin: 37px 10px;
+			line-height: 86px;		
+			font-size: 110px;
+			border-right: 2px solid @white;
+		}
+		.numbers {
+			margin-top: 40px;
+			font-family: @font-simhei;
+			font-style: oblique;
+			font-size: 21px;
+		}
+		.helloworld {
+			font-family: @font-simhei;
+		}
+	}
+	.section3-right-toparea {
+		height: 98px;
+		width: @section3-right-width - 40px;
+		padding: 30px 20px;
+		color: #5a5b5b;
+		font-family: @font-simsun;
+		font-size: 16px;
+		p {
+			margin-bottom: 20px;
+			.para-end {
+				font-size: 12px;
+				font-style: oblique;
+			}
+		}
+	}
+	.section3-right-corner {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+    height: 160px;
+    width: 199px;
+    font-family: @font-simhei;
+    p {
+    	margin: 15px;
+    	color: #5a5b5b;
+    	font-size: 14px;
+    	font-style: oblique;
+    	text-indent: 3em;
+    }
+  	span {
+  		position: absolute;
+  		color: #d45d5c;
+      font-size: 72px;
+  	}
+  	.span-left {
+  		left: -25px;
+  	}
+  	.span-right {
+  		right: -15px;
+  		bottom: -10px;
+  	}
+	}
+}
+footer {
+	height: 55px;
+	width: @content-width;
+	margin: @margin-center;
+	margin-top: 40px;
+	border-top: @header-border;
+	span {
+		float: right;
+		color: @footer-right-color;
+		font-family: @font-simhei;
+	}
+}
+.triangle {
+	margin-left: 10px;
+	margin-right: 5px;
+	.css-triangle(5px, #10456b)
 }
