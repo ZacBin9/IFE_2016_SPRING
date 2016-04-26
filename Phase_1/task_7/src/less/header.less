@@ -21,6 +21,9 @@ header {
 		font-size: @navbar-brand-fontsize;
 		font-family: '黑体';
 		background: @navbar-brand-url no-repeat center left;
+		&:visited, &:hover {
+			color: @link-color;
+		}
 	}
 	.navbar-right {
 		float: right;
@@ -39,7 +42,7 @@ header {
 			padding: @navbar-login-padding;
 			color: @link-hover-color;
 			border-radius: @navbar-login-bradius;
-			.transition(all; .3s; cubic-bezier(.4,0,.2,1));
+			.transition(all; .4s; cubic-bezier(.4,0,.2,1));
 		//	background: @navbar-login-url no-repeat center left;
 		  &.signup {
         color: #fff;

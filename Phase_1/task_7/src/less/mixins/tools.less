@@ -1,0 +1,14 @@
+.triangle-LR (@LR; @length; @length2; @color){
+
+	height: 0;
+	width: 0;
+	border-top: @length solid transparent;
+	border-bottom: @length solid transparent;
+	border-@{LR}: @length2 solid @color;
+}
+
+.line(@height; @width; @color) {
+		height: @height;
+		width: @width;
+		background-color: @color;
+}
