@@ -1,59 +1,6 @@
-@font-simhei: '黑体';
-@font-simkai: '楷体';
-@font-simsun: '宋体';
-
-@site-minwidth: 1250px;
-
-
-* { 
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-body {
-	min-width: @site-minwidth;
-	font-family: 'Helvetica Neue','Hiragino Sans GB','Microsoft Yahei',sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #383838;
-  background-color: #fff;
-}
-ul {
-	list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
-/* clearfix */
-.clearfix:after {
-	content: "."; 
-	display: block; 
-	height: 0; 
-	visibility: hidden; 
-	clear: both; 
-}
-.clearfix { 
-	*zoom: 1; 
-}
-
-/* container */
-.container {
-	width: 1170px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* header */
-.page-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	min-height: 50px;
-}
+@import "variables.less";
+@import "mixins.less";
+@import "global.less";
+@import "grid.less";
+@import "header.less";
+@import "content.less";
