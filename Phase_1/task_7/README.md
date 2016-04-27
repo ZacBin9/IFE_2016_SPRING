@@ -1,1 +1,1 @@
-First use of Gulp(convert less to css and watch) and Less.
+A responsive page written by Less.
