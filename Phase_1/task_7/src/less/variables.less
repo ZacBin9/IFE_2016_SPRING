@@ -25,16 +25,19 @@
 
 
 
-@screen-xs:            480px;
-@screen-sm:            768px;
-@screen-md:            992px;
-@screen-lg:            1200px;
-@grid-columns:         12;
-@grid-gutter-width:    30px;
-@container-sm:         (720px + @grid-gutter-width);
-@container-md:         (940px + @grid-gutter-width);
-@container-lg:         (1140px + @grid-gutter-width);
-
+@screen-xs:              480px;
+@screen-sm:              768px;
+@screen-md:              992px;
+@screen-lg:              1200px;
+@screen-xs-max:          (@screen-sm - 1);
+@screen-sm-max:          (@screen-md - 1);
+@screen-md-max:          (@screen-lg - 1);
+@grid-columns:           12;
+@grid-gutter-width:      30px;
+@container-sm:           (720px + @grid-gutter-width);
+@container-md:           (940px + @grid-gutter-width);
+@container-lg:           (1140px + @grid-gutter-width);
+@grid-float-breakpoint:  @screen-sm;
 
 
 
@@ -66,7 +69,7 @@
 @navbar-height:           60px;
 
 
-@navbar-list-margin:      10px 0;
+@navbar-list-margin:      10px;
 @gutter-between-list:     30px;
 @navbar-padding-top:      10px;
 @navbar-items-padding:    6px 10px;
@@ -83,6 +86,10 @@
 @navbar-login-color:      lighten(@link-hover-color, 10%);
 
 
+@section-padding:         80px 0 100px;
+@section-padding-xs:      40px 0 50px;
+
+
 @section1-container-width:  85%;
 @section1-bg:               url(../images/section1_bg.jpg) no-repeat center right;
 @section1-min-height:       650px;
@@ -92,19 +99,22 @@
 @section1-intro-margin-top: 50px;
 @section1-letter-spacing:   4px;
 @section1-text-margin:      10px;
+@section1-btn-size:         28px;
 
 
 @section2-icon1:            url(../images/section2_icon1.jpg) no-repeat center;
 @section2-icon2:            url(../images/section2_icon2.jpg) no-repeat center;
 @section2-icon3:            url(../images/section2_icon3.jpg) no-repeat center;
 @section2-icon4:            url(../images/section2_icon4.jpg) no-repeat center;
-@section2-item-marginbot:   20px;
+@section2-item-marginbot:   40px;
 @section2-item-percentage:  70%;
 @section2-icon-marginbot:   40px;
 
 
 @section3-bg:               #edecec;
 @section3-icon:             url(../images/logo.png) no-repeat center;
+@section3-icon-margin:      0 auto 40px;
+@section3-p-size:           54px;
 
 
 @section4-min-height:       340px;
@@ -112,7 +122,7 @@
 @section4-select-icon:      url(../images/select_icon.png) no-repeat center;
 @section4-select-height:    36px;
 @section4-search-bg:        #be4e48;
-@section4-search-padding:   8px 100px;
+@section4-search-padding:   8px;
 @section4-select-hover:     0 0 8px 1px rgba(190,78,72,.6);
 @section4-select-g-padding: 50px;
 

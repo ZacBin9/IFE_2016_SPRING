@@ -1,7 +1,10 @@
 .content {
 	padding-top: @navbar-height - 1px;
 	> * {
-		padding: 80px 0 100px;
+		padding: @section-padding;
+		@media (max-width: @screen-xs-max) { 
+      padding: @section-padding-xs;
+  	}
 	}
 }
 .section1 {
@@ -31,42 +34,57 @@
 	}
 	.container {
 		max-width: @section1-container-width;
+		@media (max-width: @screen-xs-max) { 
+      text-align: center;
+  	}
 	}
 	.intro {
 		color: #fff;
 		h1 {
 			font-size: 60px;
+			@media (max-width: @screen-xs-max) { 
+	      font-size: 45px;
+	      margin-bottom: 20px;
+	  	}
 		}
 		p {
 			margin-left: @section1-text-margin;
 			font-size: @font-bigger;
+			@media (max-width: @screen-xs-max) { 
+	      font-size: 18px;
+	  	}
 		}
 		.intro-btn {
-			float: left;
+			display: inline-block;
 			margin-left: @section1-text-margin;
 			margin-top: @section1-intro-margin-top;
 			padding: @section1-intro-padding;
 			color: #fff;
-			font-size: 28px;
-			letter-spacing: @section1-letter-spacing;
+			font-size: @section1-btn-size;
 			background-color: @section1-btn-bg;
 			.transition(background-color; .4s; ease);
 			&:hover {
 				background-color: lighten(@section1-btn-bg, 5%);
 			}
+			@media (max-width: @screen-xs-max) { 
+	      width: 80%;
+	      padding: 8px;
+	      font-size: 18px;
+	  	}
 		}
 	}
 }
-
-
 .section2 {
-	padding: 60px 0;
+	padding: 60px 0 20px;
 	.section2-list{
 		margin-bottom: @section2-item-marginbot;
 	.icon {
 		height: 42px;
 		width: 42px;
 		margin: 0 auto @section2-icon-marginbot;
+		@media (max-width: @screen-xs-max) { 
+      margin-bottom: 20px;
+  	}
 	}
 	p {
 		width: @section2-item-percentage;
@@ -89,25 +107,25 @@
 		background: @section2-icon4;
 	}
 }
-
-
 .section3 {
 	background-color: @section3-bg;
 	.section3-content {
-	.section3-icon {
-		height: 92px;
-		width: 102px;
-		margin: 0 auto 40px;
-		background: @section3-icon;
-	}
-	p {
-		color: #a1a1a1;
-		font-size: 54px;
-		text-align: center;
-	}
+		.section3-icon {
+			height: 92px;
+			width: 102px;
+			margin: @section3-icon-margin;
+			background: @section3-icon;
+		}
+		p {
+			color: #a1a1a1;
+			font-size: @section3-p-size;
+			text-align: center;
+			@media (max-width: @screen-xs-max) { 
+	      font-size: 21px;
+	  	}	
+		}
 	}
 }
-
 .section4 {
 	position: relative;
 	padding-top: 40px;
@@ -150,6 +168,7 @@
 	.select-group {
 		padding-top: @section4-select-g-padding;
 		.select {
+			margin-bottom: 20px;
 			line-height: @section4-select-height;
 			background-color: #fff;
 			border: 1px solid #c0806e;
@@ -173,6 +192,7 @@
 		}
 		.search {
 			display: inline-block;
+			width: 100%;
 			padding: @section4-search-padding;
 			color: #fff;
 			background-color: @section4-search-bg;
@@ -184,9 +204,6 @@
 		}
 	}
 }
-
-
-
 .section5 {
 	background-color: @section5-bg;
 	> .container {
@@ -207,7 +224,7 @@
 		.transition(all; .5s; ease);
 		&:hover {
 			top: @section5-item-hovertop;
-			box-shadow: 0 2px 8px 4px lighten(@section5-box-shadow, 10%);
+			.box-shadow(0 2px 8px 4px lighten(@section5-box-shadow, 10%));
 		  .imgBox > img {
 			.scale(@section5-item-hoverscale);
 		  }
@@ -233,7 +250,6 @@
 	}
   }
 }
-
 .section6 {
 	padding: 0!important;
 	.s6-bg {
@@ -261,6 +277,9 @@
 		h2 {
 			font-size: @section6-left-h2size;
 			line-height: @section6-left-h2lineH;
+			@media (max-width: @screen-xs-max) { 
+	      font-size: 100px;
+	  	}
 		}
 		p {
 			font-size: @section6-left-psize;
@@ -271,6 +290,9 @@
 		height: @section6-height;
 		padding: @section6-right-padding;
 		text-align: center;
+		@media (max-width: @screen-sm-max) and (min-width: @screen-sm) {
+			padding: 120px 30px 0;
+		}
 		h2 {
 			margin-bottom: @section6-title-margin;
 		  font-size: @font-bigger;
@@ -317,8 +339,6 @@
     }
 	}
 }
-
-
 .section7 {
 	padding: 0!important;
 	.s7-l-bg {
@@ -351,6 +371,9 @@
 		height: @section7-height;
 		padding: @section7-content-padding;
 		text-align: center;
+		@media (max-width: @screen-sm-max) and (min-width: @screen-sm) {
+			padding: 150px 10px;
+		}
 		p {
 			color: #fff;
 			font-size: @font-bigger;
@@ -376,6 +399,9 @@
 		height: @section7-height;
 		padding: @section7-content-padding;
 		text-align: center;
+		@media (max-width: @screen-sm-max) and (min-width: @screen-sm) {
+			padding: 150px 10px;
+		}
 		p {
 			color: @gray;
 			font-size: @font-bigger;
@@ -401,9 +427,6 @@
 		height: @section7-height;
 	}
 }
-
-
-
 .section8 {
 	.volunteer-title {
 		padding: @section8-title-padding;
@@ -422,6 +445,9 @@
 			color: @gray-light;
 			font-size: @font-smaller;
 		}
+		@media (max-width: @screen-xs-max) { 
+      padding: 0;
+  	}
 	}
 	.volunteer-content {
 		.volunteer {
@@ -464,6 +490,10 @@
 				&:hover {
 					width: 100%;
 				}
+				@media (max-width: @screen-xs-max) { 
+		      width: 100%;
+		      transition: none;
+		  	}
 			}
 		}
 	}

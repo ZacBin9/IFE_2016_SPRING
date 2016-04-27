@@ -12,11 +12,11 @@
           box-sizing: border-box; 
 }
 html {
+  font-size: 10px;
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 body {
+  margin: 0;
   font-family: @font-family-base;
   font-size: @font-size-base;
   line-height: @line-height-base;
@@ -54,11 +54,31 @@ input[type="submit"] {
 .clearfix {
 	.clearfix();
 }
-
-
 .btn {
   display: inline-block;
   text-align: center;
   border: 1px solid transparent;
   cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
 }
