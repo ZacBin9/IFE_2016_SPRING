@@ -1,7 +1,7 @@
 footer {
 	.contact-us {
-		padding: 80px;
-		background-color: #32363e;
+		padding: @footer-contact-padding;
+		background-color: @footer-contact-bg;
 		color: #fff;
 		text-align: center;
 		h2 {
@@ -13,6 +13,49 @@ footer {
 	    font-size: @font-smaller;
 	    margin-bottom: 20px;
 		}
+		.input-email {
+			width: @footer-input-width;
+			padding-left: @footer-input-padding;
+			border-radius: 0;
+			margin-bottom: 10px;
+		}
+		.btn-email {
+			height: @footer-btn-height;
+			padding: @footer-btn-padding;
+			color: #fff;
+			font-size: (@font-size-base + 1px);
+			background-color: @footer-btn-color;
+			.transition(background-color; .4s; ease);
+			&:hover {
+				background-color: lighten(@footer-btn-color, 5%);
+			}
+		}
+		.icon-group {
+			.icons {
+				padding: @footer-icon-padding;
+				color: #fff;
+				font-size: @footer-icon-size;
+				opacity: @footer-icon-opacity;
+				cursor: pointer;
+				.transition(opacity; .4s; ease);
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
 	}
-	
+	.footer {
+		padding: @footer-footer-padding;
+		background-color: @footer-footer-bg;
+		font-size: @font-smaller;
+		&:extend(.clearfix all);
+		span {
+			float: left;
+			color: #fff;
+		}
+		a {
+			float: right;
+			color: #fff;
+		}
+	}
 }

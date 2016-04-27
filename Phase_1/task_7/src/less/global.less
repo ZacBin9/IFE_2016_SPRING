@@ -11,6 +11,11 @@
      -moz-box-sizing: border-box; 
           box-sizing: border-box; 
 }
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 body {
   font-family: @font-family-base;
   font-size: @font-size-base;
@@ -33,8 +38,18 @@ ul, ol, dl {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
-input, textarea, button {
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   outline: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; 
 }
 .clearfix {
 	.clearfix();
