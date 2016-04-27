@@ -1,1 +1,0 @@
-Responsive grid,written with Less.
