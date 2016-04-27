@@ -1,0 +1,23 @@
+.visible-xs, .visible-sm {
+	display: none;
+}
+.visible-xs {
+  @media (max-width: @screen-xs-max) {
+    display: block!important;
+  }
+}
+.visible-sm {
+  @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    display: block!important;
+  }
+}
+.hidden-xs {
+  @media (max-width: @screen-xs-max) {
+    display: none!important;
+  }
+}
+.hidden-sm {
+  @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    display: none!important;
+  }
+}
