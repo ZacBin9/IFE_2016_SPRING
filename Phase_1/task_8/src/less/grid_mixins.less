@@ -1,0 +1,49 @@
+.container-common() {
+  padding-left: (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+.create-row() {
+  margin-left: -(@grid-gutter-width / 2);
+  margin-right: -(@grid-gutter-width / 2);
+}
+.create-grid-common() {
+  .col(@index) {
+    @classname: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col(@index + 1, @classname);
+  }
+  .col(@index, @classname-loop) when (@index =< @grid-columns) {
+    @classname: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col(@index + 1, ~"@{classname-loop}, @{classname}");
+  }
+  .col(@index, @classname-loop) when (@index > @grid-columns) {
+    @{classname-loop} {
+      float: left;
+      position: relative;
+      min-height: 1px;
+      padding-left: @grid-gutter-width / 2;
+      padding-right: @grid-gutter-width / 2;
+    }
+  }
+  .col(1);
+}
+
+.calc-grid(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid(@index, @class, @type) when (@type = offset) and (@index > 0) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage(@index / @grid-columns);
+  }
+}
+.loop-grid(@index, @class, @type) when (@index =< @grid-columns) {
+  .calc-grid(@index, @class, @type);
+  .loop-grid(@index + 1, @class, @type);
+}
+.create-grid-spe(@class) {
+  .loop-grid(1, @class, width);
+  .loop-grid(1, @class, offset);
+}
