@@ -16,15 +16,16 @@ body {
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #000;
-	background-color: #EFEFEF;
+	background-color: #efefef;
 }
 section {
-	width: 100px;
+	width: 300px;
 	margin: 100px auto;
 	text-align: center;
 }
 section ul {
-
+  width: 100px;
+  margin: 20px auto;
 }
 section ul>li>a {
 	display: block;
@@ -32,9 +33,9 @@ section ul>li>a {
 	padding: 10px;
 	background-color: #fff;
 	border-radius: 5px;
-	-webkit-transition: all .5s;
-	transition: all .5s;
+	-webkit-transition: bacground-color .5s;
+	transition: background-color .5s;
 }
 section ul>li>a:hover {
-	background-color: #F3F3F3;
+	background-color: #f3f3f3;
 }
