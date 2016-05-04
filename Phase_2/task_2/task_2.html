@@ -33,7 +33,10 @@ var aqiData = [
     return b[1] - a[1];
   });
   var aqiStr = '';
-  sortArray.forEach(function(item, index){  // 生成html
+  /*for (var aqiStr = '', i = 0; i < sortArray.length; i++){ 生成html - 1
+    aqiStr += '<li>第' + numberConvert[index] + '名: ' + sortArray[i][0] + '， ' + sortArray[i][1] + '</li>';
+  }*/
+  sortArray.forEach(function(item, index){  // 生成html - 2
     aqiStr += '<li>第' + numberConvert[index] + '名：' + item[0] + '， ' + item[1] + '</li>';
   });
   document.getElementById('aqi-list').innerHTML = aqiStr;
