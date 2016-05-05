@@ -45,6 +45,7 @@ function getData() {
     var aqiValue = child.children[0].innerHTML;      // 取得aqi值
     data.push([cityName, aqiValue]);                   // 推入数组
   }
+  return data;
   /*
   data = [
     ["北京", 90],
@@ -52,9 +53,6 @@ function getData() {
     ……
   ]
   */
-
-  return data;
-
 }
 
 /**
@@ -90,7 +88,6 @@ function btnHandle() {
 
 
 function init() {
-
   // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
   $('sort-btn').onclick = btnHandle;
 }
