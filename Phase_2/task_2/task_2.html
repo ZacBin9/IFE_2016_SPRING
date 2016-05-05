@@ -26,17 +26,17 @@ var aqiData = [
 
 (function () {
   var numberConvert = ['一','二','三','四','五','六'];
-  var filterArray = aqiData.filter(function(item){  //筛选(filter)
+  var filterArray = aqiData.filter(function(item) {  //筛选(filter)
     return (item[1] > 60);
   });
-  var sortArray = filterArray.sort(function(a, b){   //排序(sort)
+  var sortArray = filterArray.sort(function(a, b) {   //排序(sort)
     return b[1] - a[1];
   });
   var aqiStr = '';
   /*for (var aqiStr = '', i = 0; i < sortArray.length; i++){ 生成html - 1
     aqiStr += '<li>第' + numberConvert[index] + '名: ' + sortArray[i][0] + '， ' + sortArray[i][1] + '</li>';
   }*/
-  sortArray.forEach(function(item, index){  // 生成html - 2
+  sortArray.forEach(function(item, index) {  // 生成html - 2
     aqiStr += '<li>第' + numberConvert[index] + '名：' + item[0] + '， ' + item[1] + '</li>';
   });
   document.getElementById('aqi-list').innerHTML = aqiStr;
