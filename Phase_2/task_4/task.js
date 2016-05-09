@@ -14,6 +14,7 @@ var aqiData = {};
 function addAqiData() {
   var cityName = document.getElementById('aqi-city-input').value.trim();
   var aqiValue = document.getElementById('aqi-value-input').value.trim();
+  // 几个简单的验证
   if(!(cityName && aqiValue)) {
     alert('两个字段均不能为空');
     return;
@@ -26,7 +27,7 @@ function addAqiData() {
     alert('空气质量指数必须为正整数');
     return;
   }
-  aqiData[cityName] = aqiValue;
+  aqiData[cityName] = aqiValue;  //验证通过后,在aqiData中添加属性
 }
 
 /**
@@ -37,7 +38,7 @@ function renderAqiList() {
   for (var props in aqiData) {
     aqiStr += '<tr><td>' + props + '</td><td>' + aqiData[props] + '</td><td><button data-city="' + props + '">删除</button></td></tr>'
   }
-  document.getElementById('aqi-table').innerHTML = props ? aqiStr : '';
+  document.getElementById('aqi-table').innerHTML = props ? aqiStr : '';  //若aqiData中无属性,表格为空
 
 }
 
@@ -56,8 +57,8 @@ function addBtnHandle() {
  */
 function delBtnHandle(city) {
   // do sth.
-  delete aqiData[city];
-  renderAqiList();
+  delete aqiData[city];  //删除aqiData中对应的属性
+  renderAqiList();    //重新渲染
 }
 
 function init() {
@@ -68,7 +69,7 @@ function init() {
   document.getElementById('aqi-table').onclick = function(event) {
     var delCity = event.target.dataset.city;
     if (delCity) {                   //判断是否有data-city属性
-      delBtnHandle(delCity);         //进行删除
+      delBtnHandle(delCity);         //传入需要删除的属性,调用删除函数
     }
   };
 }
