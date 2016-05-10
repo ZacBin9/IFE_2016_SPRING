@@ -38,9 +38,9 @@ fieldset input {
 }
 select {
   margin-left: 20px;
-  padding: 0 6px;
+  padding-left: 8px;
   height: 35px;
-  width: 100px;
+  width: 120px;
 }
 .aqi-chart-wrap {
   position: relative;
