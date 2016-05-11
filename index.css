@@ -18,7 +18,13 @@ body {
   color: #000;
   background-color: #efefef;
 }
+.wrapper {
+  overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+}
 section {
+  float: left;
   width: 300px;
   margin: 100px auto;
   text-align: center;

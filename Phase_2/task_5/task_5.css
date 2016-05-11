@@ -1,0 +1,78 @@
+* { 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+}
+fieldset {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  border-radius: 15px;
+}
+legend {
+  font-size: 16px;
+}
+fieldset label {
+  float: left;
+  margin: 0 10px;
+}
+fieldset label span {
+  display: block;
+  padding: 6px 20px;
+  text-align: center;
+  color: #80849A;
+  border: 2px solid #80849A;
+  border-radius: 3px;
+  cursor: pointer;
+}
+fieldset label span.active {
+  color: #fff;
+  background-color: #80849A;
+}
+fieldset input {
+  display: none;
+}
+select {
+  margin-left: 20px;
+  padding-left: 8px;
+  height: 35px;
+  width: 120px;
+}
+.aqi-chart-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 50px auto;
+  box-shadow: 0 1px 2px 0 #cccbcb;
+}
+.aqi-chart-wrap .aqi-column {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  -webkit-transition: height .6s ease-in-out;
+          transition: height .6s ease-in-out;
+}
+.tooltips {
+  position: absolute;
+  width: 10%;
+  color: #333;
+  font-size: 13px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid #7CB5EC;
+  background-color: #FAFAFA;
+  border-radius: 3px;
+  z-index: 1001;
+  opacity: 0;
+  -webkit-transition: transform .3s ease;
+          transition: transform .3s ease;
+}
+.aqi-chart-wrap .aqi-column:hover {
+  background-color: #82C5EF!important;
+}
