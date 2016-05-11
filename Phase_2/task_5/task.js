@@ -49,42 +49,108 @@ var chartData = {};
 var pageState = {
   nowSelectCity: -1,
   nowGraTime: "day"
+};
+function columns(wrapperWidth, length) {          //计算柱的宽度和位置
+  var columnObj = {};
+  columnObj.width = Math.floor(wrapperWidth / (length * 2));
+  columnObj.gutter = columnObj.width;
+  columnObj.offsetLeft = Math.floor((wrapperWidth - columnObj.gutter * (length - 1) - columnObj.width * length) / 2);
+  return columnObj;
 }
-
+function tooltipsContent(graTime, date, value) {  //生成tooltips里面的内容
+  var dateArr = date.split('-');
+  var tooltipsStr = '';
+  switch (graTime) {
+    case 'day':
+      tooltipsStr = dateArr[0] + '年' + dateArr[1] + '月' + dateArr[2] + '日<br>[ AQI ]: ' + value;
+      break;
+    case 'week':
+      tooltipsStr = dateArr[0] + '年第' + dateArr[2] + '周<br>[ AQI ]: ' + value;
+      break;
+    case 'month':
+      tooltipsStr = dateArr[0] + '年' + dateArr[1] + '月<br>[ AQI ]: ' + value;
+      break;
+  }
+  return tooltipsStr;
+}
 /**
  * 渲染图表
  */
 function renderChart() {
-
+  var chartHTML = '';
+  var chartWrapper = document.getElementById('chart');
+  var chartWidth = chartWrapper.clientWidth;
+  var displayData = chartData[pageState.nowGraTime][pageState.nowSelectCity];
+  var columnsLength = Object.keys(displayData).length;
+  var column = columns(chartWidth, columnsLength);
+  var i = 0;
+  chartHTML += '<div class="tooltips"></div>';
+  for (var key in displayData) {
+    chartHTML += '<div class="aqi-column" style="height: 0px; width: ' + column.width + 'px; left: ' + (column.offsetLeft + (column.width + column.gutter) * i) + 'px; background-color:#98B8CC;" data-date="' + key + '"></div>';
+    i++;
+  }
+  chartWrapper.innerHTML = chartHTML;
+  setTimeout(function(){       //触发transition ,这样写好像不太好。暂时想不到好的。setTimeout延迟执行
+    var j = 1;
+    for (var key in displayData){
+      chartWrapper.children[j].style.height = displayData[key] + 'px';
+      j++;
+    }
+  },0);
+  var tooltips = document.querySelector('.tooltips');
+  chartWrapper.onmouseover = function(event) {  //事件委托. mouseover和mouseout会冒泡到chartWrapper
+    var columnTarget = event.target;
+    if(columnTarget.className == 'aqi-column') {
+      var columnValue = parseInt(columnTarget.style.height);
+      tooltips.innerHTML = tooltipsContent(pageState.nowGraTime, columnTarget.dataset.date, columnValue);
+      // tooltips的transform，触发过渡效果.因为用all的话也会有opacity的效果. 如何transition只关注left和bottom的变化?
+      tooltips.style.transform ='translate(' + (parseInt(columnTarget.style.left) + Math.floor(parseInt(columnTarget.style.width) / 2) - Math.floor(parseInt(tooltips.offsetWidth) / 2)) + 'px' + ',' + (parseInt(chartWrapper.offsetHeight) - columnValue - parseInt(tooltips.offsetHeight) - 10) + 'px' + ')';
+      tooltips.style.opacity = '.8';
+    }
+  }
+  chartWrapper.onmouseout = function(event) {
+    var columnTarget = event.target;
+    if(columnTarget.className == 'aqi-column') {
+      tooltips.style.opacity = '0';
+    }
+  }
 }
 
 /**
  * 日、周、月的radio事件点击时的处理函数
  */
-function graTimeChange() {
-  // 确定是否选项发生了变化 
-
-  // 设置对应数据
-
-  // 调用图表渲染函数
+function graTimeChange(radio) {
+  if (radio.value != pageState.nowGraTime) {  // 确定是否选项发生了变化 
+    pageState.nowGraTime = radio.value;       // 设置对应数据
+    var radioGroup = document.getElementsByName('gra-time');
+    for (var i = 0; i < radioGroup.length; i++) {    // 样式变化
+      radioGroup[i].previousElementSibling.className = ' ';
+    }
+    radio.previousElementSibling.className = 'active';
+    renderChart();                               // 调用图表渲染函数
+  }
 }
 
 /**
  * select发生变化时的处理函数
  */
 function citySelectChange() {
-  // 确定是否选项发生了变化 
-
-  // 设置对应数据
-
-  // 调用图表渲染函数
+  var citySelected = this.value;
+  if (citySelected != pageState.nowSelectCity) {  // 确定是否选项发生了变化 
+    pageState.nowSelectCity = citySelected;       // 设置对应数据
+    renderChart();                                // 调用图表渲染函数
+  }
 }
 
 /**
  * 初始化日、周、月的radio事件，当点击时，调用函数graTimeChange
  */
 function initGraTimeForm() {
-
+  document.getElementById('aqi-form').onclick = function(event) {
+    if (event.target.name == 'gra-time') {
+        graTimeChange(event.target);
+    }
+  }
 }
 
 /**
@@ -92,14 +158,16 @@ function initGraTimeForm() {
  */
 function initCitySelector() {
   // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
+  var select = document.getElementById('city-select');
   var cityArr = Object.getOwnPropertyNames(aqiSourceData);
   var optionStr = '';
   cityArr.forEach(function(item) {
     optionStr += '<option>' + item + '</option>';
   })
-  document.getElementById('city-select').innerHTML = optionStr;
+  select.innerHTML = optionStr;
+  pageState.nowSelectCity = select.value;
   // 给select设置事件，当选项发生变化时调用函数citySelectChange
-
+  select.onchange = citySelectChange;
 }
 
 /**
@@ -109,9 +177,9 @@ function initAqiChartData() {
   // 将原始的源数据处理成图表需要的数据格式
   // 处理好的数据存到 chartData 中
   var weekDataCount = 0, monthDataCount = 0,
-      weekObjTemp = {}, monthObjTemp = {},
       weekObj = {}, monthObj = {};
   for (var city in aqiSourceData) {
+    var weekObjTemp = {}, monthObjTemp = {};    // 加在外面的话 最后monthObj全部引用同一个monthObjTemp(全部都是最后的monthObjTemp)
     var cityDataObj = aqiSourceData[city];
     var dateArr = Object.getOwnPropertyNames(cityDataObj);
     var weekCount = 4, weekDayCount = 0;
@@ -145,9 +213,10 @@ function initAqiChartData() {
  * 初始化函数
  */
 function init() {
-  initGraTimeForm()
+  initGraTimeForm();
   initCitySelector();
   initAqiChartData();
+  renderChart();
 }
 
 init();
