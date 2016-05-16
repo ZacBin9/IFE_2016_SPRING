@@ -124,7 +124,7 @@ function graTimeChange(radio) {
     pageState.nowGraTime = radio.value;       // 设置对应数据
     var radioGroup = document.getElementsByName('gra-time');
     for (var i = 0; i < radioGroup.length; i++) {    // 样式变化
-      radioGroup[i].previousElementSibling.className = ' ';
+      radioGroup[i].previousElementSibling.className = '';
     }
     radio.previousElementSibling.className = 'active';
     renderChart();                               // 调用图表渲染函数
