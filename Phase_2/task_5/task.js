@@ -92,7 +92,7 @@ function renderChart() {
   chartWrapper.innerHTML = chartHTML;
   setTimeout(function(){       //触发transition ,这样写好像不太好。暂时想不到好的。setTimeout延迟执行
     var j = 1;
-    for (var key in displayData){
+    for (var key in displayData){ 
       chartWrapper.children[j].style.height = displayData[key] + 'px';
       j++;
     }
