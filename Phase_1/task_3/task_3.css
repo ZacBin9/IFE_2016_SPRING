@@ -34,6 +34,9 @@ ul {
   margin-right: 20px; /*比起对center设置margin更方便 center设置margin需计算左右宽度*/
   padding: 20px;
   background-color: #fff;
+  box-shadow: 0 0 0 .4em #B1A4A4;
+  outline: .6em solid #B1A4A4;
+  border-radius: .8em;
 }
 .left img {
   float: left;
