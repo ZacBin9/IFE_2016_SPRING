@@ -1,7 +1,7 @@
 # IFE_2016_SPRING
 BAIDU IFE 2016 Spring Tasks.
 
-##phase-1
+##Phase-1
 * Task-3: 3-columns layout  
 * Task-4: Center element  
 * Task-5: Simple HTML&CSS  
