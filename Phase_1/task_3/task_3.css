@@ -27,7 +27,11 @@ ul {
   margin: 20px;
   padding: 20px;
   background-color: #eee;
-  background-image: linear-gradient(70deg, #ECF7FF 15%, #FFFAE9 95%);
+  background:
+  linear-gradient(#4EFF4E,transparent),
+  linear-gradient(90deg,#BBECFF,transparent),
+  linear-gradient(-90deg,#FFB59A,transparent);
+  background-blend-mode: screen;
 }
 .left {
   float: left;
