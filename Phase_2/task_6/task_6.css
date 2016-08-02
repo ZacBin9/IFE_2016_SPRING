@@ -1,0 +1,33 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+input {
+  padding: 6px 20px;
+}
+input[type=button] {
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+}
+input[type=button]:hover {
+  background-color: #f3f3f3;
+}
+#right-in {
+  margin-right: 20px;
+}
+#quene {
+  overflow: hidden;
+  padding: 0;
+}
+ul li {
+  float: left;
+  padding: 6px 10px;
+  margin-right: 20px;
+  color: #fff;
+  background-color: red;
+  font-size: 20px;
+  list-style: none;
+  cursor: pointer;
+}
