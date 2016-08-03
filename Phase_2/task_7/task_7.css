@@ -1,0 +1,33 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+input {
+  padding: 6px 20px;
+}
+input[type=button] {
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+}
+input[type=button]:hover {
+  background-color: #f3f3f3;
+}
+#right-in, #right-out {
+  margin-right: 20px;
+}
+#queue {
+  margin-top: 100px;
+  overflow: hidden;
+}
+#queue>div {
+  display: inline-block;
+  width: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #fff;
+  background-color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
