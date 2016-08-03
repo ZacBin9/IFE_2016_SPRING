@@ -12,6 +12,6 @@ BAIDU IFE 2016 Spring Tasks.
 ##Phase-2
 * Task-4: DOM/Event/Validation
 * Task-5: A cool chart
-* Task-6: A queue
+* Task-7: A queue
 
 ###[Demos here!](http://zacbin9.github.io/IFE_2016_SPRING/)
